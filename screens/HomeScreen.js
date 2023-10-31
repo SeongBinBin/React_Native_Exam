@@ -71,7 +71,8 @@ function HomeScreen({navigation}){
                     <View style={styles.item}>
                         <View style={{flexDirection: 'row', alignItems: 'center', gap: 10,}}>
                             <View style={styles.imgBox}>
-                                <Image style={styles.img} source={require('../assets/imgs/userImg.jpg')}/>
+                                {/* <Image style={styles.img} source={require('../assets/imgs/userImg.jpg')}/> */}
+                                <Image style={styles.img} source={item.imageSource}/>
                             </View>
                             <View style={{flexDirection: 'column'}}>
                                 <Text style={styles.itemText}>{item.name}</Text>
@@ -85,6 +86,7 @@ function HomeScreen({navigation}){
                                 email: item.email,
                                 home: item.home,
                                 like: item.like,
+                                imageSource: item.imageSource,
                             })}
                             style={styles.navigateIcon}
                         >
@@ -103,6 +105,7 @@ export default HomeScreen
 const styles = StyleSheet.create({
     block: {
         flex: 1,
+        backgroundColor: '#fff',
     },
     searchSection: {
         margin: 20,

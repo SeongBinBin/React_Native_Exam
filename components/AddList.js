@@ -27,6 +27,7 @@ function AddList(){
         const data = {
             name, email, home, like,
             createdAt: getCurrentTime(),
+            imageSource: require('../assets/imgs/userImg.jpg'),
         }
 
         if(data.name === ''){
@@ -51,6 +52,7 @@ function AddList(){
 
             <Modal
                 visible={showModal}
+                transparent={true}
             >
                 <View style={styles.modal}>
                     <View style={styles.modalContent}>
@@ -119,6 +121,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: 'rgba(0,0,0,0.8)'
     },
     modalContent: {
         backgroundColor: "#efefef",

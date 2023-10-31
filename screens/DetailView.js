@@ -2,13 +2,13 @@ import React from "react";
 import { SafeAreaView, Text, View, StyleSheet, Image } from "react-native";
 
 function DetailView({route}){
-    const {name, email, home, like} = route.params
+    const {name, email, home, like, imageSource} = route.params
 
     return(
         <SafeAreaView style={styles.block}>
             <View style={styles.container}>
                 <View style={styles.imgBox}>
-                    <Image source={require('../assets/imgs/userImg.jpg')}/>
+                    <Image source={imageSource}/>
                 </View>
 
                 <View style={styles.textContainer}>
