@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "714047182736",
+    "project_id": "react-native-exam-58bcd",
+    "storage_bucket": "react-native-exam-58bcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714047182736:android:aeb7873d863faf9c488515",
+        "android_client_info": {
+          "package_name": "com.react_native_exam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxa41ME_GFp0PqzXvo8nkSBw2-v1S5BMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
