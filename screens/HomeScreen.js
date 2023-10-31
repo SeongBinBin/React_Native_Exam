@@ -72,7 +72,7 @@ function HomeScreen({navigation}){
                         <View style={{flexDirection: 'row', alignItems: 'center', gap: 10,}}>
                             <View style={styles.imgBox}>
                                 {/* <Image style={styles.img} source={require('../assets/imgs/userImg.jpg')}/> */}
-                                <Image style={styles.img} source={item.imageSource}/>
+                                <Image style={styles.img} source={require('../assets/imgs/userImg.jpg')}/>
                             </View>
                             <View style={{flexDirection: 'column'}}>
                                 <Text style={styles.itemText}>{item.name}</Text>
@@ -86,7 +86,7 @@ function HomeScreen({navigation}){
                                 email: item.email,
                                 home: item.home,
                                 like: item.like,
-                                imageSource: item.imageSource,
+                                imageSource: require('../assets/imgs/userImg.jpg'),
                             })}
                             style={styles.navigateIcon}
                         >

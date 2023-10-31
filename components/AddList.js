@@ -27,7 +27,7 @@ function AddList(){
         const data = {
             name, email, home, like,
             createdAt: getCurrentTime(),
-            imageSource: require('../assets/imgs/userImg.jpg'),
+            // imageSource: require('../assets/imgs/userImg.jpg'),
         }
 
         if(data.name === ''){
