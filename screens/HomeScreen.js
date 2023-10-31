@@ -140,8 +140,10 @@ const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 10,
+        gap: 15,
         paddingTop: 10, paddingBottom: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#989898'
     },
     imgBox: {
         width: 50,

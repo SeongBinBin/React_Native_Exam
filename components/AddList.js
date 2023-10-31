@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import { SafeAreaView, TouchableOpacity, StyleSheet, Text, Modal, View, Button, TextInput } from "react-native";
+import { SafeAreaView, TouchableOpacity, StyleSheet, Text, Modal, View, Alert, TextInput } from "react-native";
 import { addData, getCurrentTime } from "../apis/firebase";
+import Icon from 'react-native-vector-icons/Ionicons'
 
 function AddList(){
     const [showModal, setShowModal] = useState(false)
@@ -27,15 +28,25 @@ function AddList(){
             name, email, home, like,
             createdAt: getCurrentTime(),
         }
-        addData('React-Native-Exam', data)
 
-        closeModal()
+        if(data.name === ''){
+            Alert.alert('알림','이름을 입력해주세요.')
+        }else if(data.email === ''){
+            Alert.alert('알림','이메일을 입력해주세요.')
+        }else if(data.home === ''){
+            Alert.alert('알림','거주지 입력해주세요.')
+        }else if(data.like === ''){
+            Alert.alert('알림','관심사를 입력해주세요.')
+        }else{
+            addData('React-Native-Exam', data)
+            closeModal()
+        }
     }
 
     return(
         <SafeAreaView style={styles.block}>
             <TouchableOpacity style={styles.addBtn} onPress={openModal}>
-                <Text style={styles.addBtnText}>+</Text>
+                <Icon name="add-circle" size={40}/>
             </TouchableOpacity>
 
             <Modal
@@ -48,7 +59,7 @@ function AddList(){
                             <TextInput
                                 value={name}
                                 onChangeText={text => setName(text)}
-                                style={styles.input} placeholder="이름을 입력해주세요"
+                                style={styles.input} placeholder="이름을 입력해주세요."
                             />
                         </View>
                         <View style={styles.modalInputSection}>
@@ -56,7 +67,7 @@ function AddList(){
                             <TextInput
                                 value={email}
                                 onChangeText={text => setEmail(text)}
-                                style={styles.input} placeholder="이메일을 입력해주세요"
+                                style={styles.input} placeholder="이메일을 입력해주세요."
                             />
                         </View>
                         <View style={styles.modalInputSection}>
@@ -64,7 +75,7 @@ function AddList(){
                             <TextInput
                                 value={home}
                                 onChangeText={text => setHome(text)}
-                                style={styles.input} placeholder="거주지를 입력해주세요"
+                                style={styles.input} placeholder="거주지를 입력해주세요."
                             />
                         </View>
                         <View style={[styles.modalInputSection, {marginBottom: 50}]}>
@@ -72,7 +83,7 @@ function AddList(){
                             <TextInput
                                 value={like}
                                 onChangeText={text => setLike(text)}
-                                style={styles.input} placeholder="관심사를 입력해주세요"
+                                style={styles.input} placeholder="관심사를 입력해주세요."
                             />
                         </View>
                         <View style={styles.btnSection}>
@@ -100,15 +111,9 @@ const styles = StyleSheet.create({
         bottom: 20,
         right: 20,
         borderRadius: 100,
-        backgroundColor: '#000',
-        width: 30,
-        height: 30,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    addBtnText: {
-        fontSize: 20,
-        color: '#fff',
+        textAlign: 'center',
     },
     modal: {
         flex: 1,
@@ -127,7 +132,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 5,
+        gap: 10,
     },
     modalText:{
       width: 50,
